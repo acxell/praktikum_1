@@ -1,17 +1,15 @@
-import 'package:praktikum_1/RegisterScreen.dart';
-import 'package:praktikum_1/botnavbar.dart';
 import 'package:flutter/material.dart';
 import 'package:praktikum_1/pinsrc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class page1 extends StatefulWidget {
-  const page1({super.key});
+class landingPage extends StatefulWidget {
+  const landingPage({super.key});
 
   @override
-  State<page1> createState() => _page1State();
+  State<landingPage> createState() => _landingPageState();
 }
 
-class _page1State extends State<page1> {
+class _landingPageState extends State<landingPage> {
   String? nbi;
   String? nama;
   String? email;
@@ -116,21 +114,6 @@ class _page1State extends State<page1> {
                     );
                   },
                   child: Text("Masuk"),
-                  style: ButtonStyle(
-                    fixedSize: MaterialStateProperty.all(
-                        Size(250, 40)), // Set the button size
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return RegisterScreen();
-                      }),
-                    );
-                  },
-                  child: Text("Keluar"),
                   style: ButtonStyle(
                     fixedSize: MaterialStateProperty.all(
                         Size(250, 40)), // Set the button size

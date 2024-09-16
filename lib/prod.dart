@@ -1,169 +1,66 @@
 import 'package:flutter/material.dart';
+import 'package:praktikum_1/widget/ListProd.dart';
 
-class prod extends StatefulWidget {
-  const prod({super.key});
+class Prod extends StatefulWidget {
+  const Prod({Key? key}) : super(key: key);
 
   @override
-  State<prod> createState() => _prodState();
+  State<Prod> createState() => _ProdState();
 }
 
-class _prodState extends State<prod> {
+class _ProdState extends State<Prod> {
   bool change = false;
+
+  List prod = [
+    {"img": "assets/images/look.jpeg", "txt": "White Plain Shirt"},
+    {"img": "assets/images/a.jpeg", "txt": "Brown Plain Shirt"},
+    {"img": "assets/images/b.jpeg", "txt": "Cream Plain Shirt"},
+    {"img": "assets/images/c.jpeg", "txt": "Green Plain Shirt"},
+    {"img": "assets/images/d.jpeg", "txt": "Yellow Plain Shirt"},
+    {"img": "assets/images/e.jpeg", "txt": "Black Shirt"},
+    {"img": "assets/images/f.jpeg", "txt": "Green Bomber"},
+    {"img": "assets/images/g.jpeg", "txt": "Flanel"},
+    {"img": "assets/images/h.jpeg", "txt": "Black Bag"},
+    {"img": "assets/images/kin.jpeg", "txt": "Black Coat"}
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          centerTitle: true,
-          title: Text(
-            'UNIQLO',
-            style: TextStyle(
-              fontSize: 30,
-              fontFamily: "poppins",
-              height: 0,
-              fontWeight: FontWeight.bold,
-              color: Colors.red,
-            ),
-          ),
-          iconTheme: IconThemeData(
-            color: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        centerTitle: true,
+        title: Text(
+          'UNIQLO',
+          style: TextStyle(
+            fontSize: 30,
+            fontFamily: "poppins",
+            height: 0,
+            fontWeight: FontWeight.bold,
+            color: Colors.red,
           ),
         ),
-        body: Padding(
-          padding: EdgeInsets.all(16),
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Image.asset(
-                    "assets/images/look.jpeg",
-                    height: 100,
-                    width: 100,
-                  ),
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(left: 10.0),
-                      child: Text(
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing.',
-                        textAlign: TextAlign.justify,
-                        maxLines: 5,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 10,
-                          fontFamily: "poppins",
-                          height: 1.5,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                    ),
-                  ),
-                ]),
-                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Image.asset(
-                    "assets/images/look.jpeg",
-                    height: 100,
-                    width: 100,
-                  ),
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(left: 10.0),
-                      child: Text(
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing.',
-                        textAlign: TextAlign.justify,
-                        maxLines: 5,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 10,
-                          fontFamily: "poppins",
-                          height: 1.5,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                    ),
-                  ),
-                ]),
-                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Image.asset(
-                    "assets/images/look.jpeg",
-                    height: 100,
-                    width: 100,
-                  ),
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(left: 10.0),
-                      child: Text(
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing.',
-                        textAlign: TextAlign.justify,
-                        maxLines: 5,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 10,
-                          fontFamily: "poppins",
-                          height: 1.5,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                    ),
-                  ),
-                ]),
-                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Image.asset(
-                    "assets/images/look.jpeg",
-                    height: 100,
-                    width: 100,
-                  ),
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(left: 10.0),
-                      child: Text(
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing.',
-                        textAlign: TextAlign.justify,
-                        maxLines: 5,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 10,
-                          fontFamily: "poppins",
-                          height: 1.5,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                    ),
-                  ),
-                ]),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Text("Add To Cart"),
-                      style: ButtonStyle(
-                        fixedSize: MaterialStateProperty.all(Size(250, 40)),
-                        backgroundColor:
-                            MaterialStateProperty.resolveWith<Color>(
-                          (Set<MaterialState> states) {
-                            if (states.contains(MaterialState.pressed)) {
-                              return Colors
-                                  .yellow; // Change button color when pressed to yellow
-                            }
-                            return Colors.blueGrey; // Default button color
-                          },
-                        ),
-                        foregroundColor:
-                            MaterialStateProperty.resolveWith<Color>(
-                          (Set<MaterialState> states) {
-                            if (states.contains(MaterialState.pressed)) {
-                              return Colors
-                                  .black; // Change text color when pressed to white
-                            }
-                            return Colors.white; // Default text color
-                          },
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ]),
-        ));
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
+      ),
+      body: Padding(
+        padding: EdgeInsets.only(top: 20),
+        child: Column(
+          children: [
+            SizedBox(
+              width: 500,
+              height: 560,
+              child: ListView.builder(
+                  itemCount: prod.length,
+                  itemBuilder: (context, index) {
+                    return list_prod(
+                        img: prod[index]["img"], txt: prod[index]["txt"]);
+                  }),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
